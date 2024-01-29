@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 
 const ExampleAPIs = () => {
     const [todos, setTodos] = useState([]);
@@ -22,14 +22,12 @@ const ExampleAPIs = () => {
 
     return (
         <View style={styles.container}>
-            <Text>rick</Text>
-
             <ScrollView>
                 {todos?.map((todo) => {
                     return (
                         <View style={styles.todo} key={todo.id}>
                             <Text>{todo.name}</Text>
-                            
+                            <Image source={{ uri: `${todo.image}` }} style={{width: 200, height: 200, borderRadius: 5,}} />
                         </View>
                     );
                 })}
@@ -51,7 +49,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 8,
         justifyContent: 'center',
         alignItems: 'center',
-        height: 50,
+        height: 300,
         borderRadius: 5,
         backgroundColor: 'lightgreen',
     }
