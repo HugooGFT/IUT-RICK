@@ -27,12 +27,12 @@ export default function Navigation() {
 
             // Renvoie l'icône
             return <Ionicons name={iconName} size={size} color={color} />;
-          },
+          }, 
+          tabBarActiveTintColor: "tomato",
+          tabBarInactiveTintColor: "gray"
         })}
-        tabBarOptions={{
-          activeTintColor: 'tomato',
-          inactiveTintColor: 'gray',
-        }}
+        
+        
 
         >
           <Tab.Screen name="Home" component={HomeScreen} />
