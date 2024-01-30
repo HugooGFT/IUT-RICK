@@ -1,5 +1,6 @@
+import { useNavigation } from '@react-navigation/core';
 import React, { useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, Text, View, Image,FlatList, SafeAreaView } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image,FlatList, SafeAreaView, Button } from 'react-native';
 
 const ExampleAPIs = () => {
     const [todos, setTodos] = useState([]);
@@ -22,10 +23,14 @@ const ExampleAPIs = () => {
         getTodoData();
     }, []);
 
+    const navigation = useNavigation();
+
     const Item = ({ character }) => {
+        const goTo = () => navigation.navigate("Details", {character: character});
         return (
             <View style={styles.todo} key={character.id}>
                 <Text>{character.name}</Text>
+                <Button onPress={goTo} title={`Go to Details`} />
                 <Image source={{ uri: `${character.image}` }} style={{ width: 200, height: 200, borderRadius: 5 }} />
             </View>
         );
