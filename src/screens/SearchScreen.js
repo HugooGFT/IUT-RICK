@@ -19,10 +19,10 @@ const Search = () => {
 
   return (
     <View>
-      <Text>SearchScreen</Text>
+      <Text style={{fontSize:20, textAlign: 'center', margin:'5%'}}>Recherche de personnage</Text>
       <TextInput
         placeholder='Search'
-        style={{ fontSize: 20, borderWidth: 1, borderColor: 'skyblue', margin: 20 }}
+        style={{ fontSize: 40, borderWidth: 1, borderColor: 'black', margin: 20 }}
         onChangeText={(text) => searchUser(text)} // Fix: use searchUser instead of SearchScreen
       />
 
@@ -30,9 +30,10 @@ const Search = () => {
       <FlatList
         data={data}
         renderItem={({ item }) => (
-          <View>
-            <Text>{item.name}</Text>
-            <Image source={{ uri: item.image }} style={{ width: 50, height: 50 }} />
+          <View style={{justifyContent: 'center',
+          alignItems: 'center',}}>
+            <Text style={{textAlign: 'center',marginTop: '5%'}}>{item.name}</Text>
+            <Image source={{ uri: item.image }} style={{ width: 200, height: 200 }} />
           </View>
         )}
         keyExtractor={(item) => item.id.toString()}

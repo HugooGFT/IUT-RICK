@@ -29,15 +29,16 @@ const ExampleAPIs = () => {
         const goTo = () => navigation.navigate("Details", {character: character});
         return (
             <View style={styles.todo} key={character.id}>
-                <Text>{character.name}</Text>
-                <Button onPress={goTo} title={`Go to Details`} />
-                <Image source={{ uri: `${character.image}` }} style={{ width: 200, height: 200, borderRadius: 5 }} />
+                <Text style={styles.text}>{character.name}</Text>
+                <Image source={{ uri: `${character.image}` }} style={{ width: 200, height: 200, borderRadius: 5, margin: '3%' }} />
+                <Button onPress={goTo} title={`Description`} color="#5f9ea0" />
             </View>
         );
     };
 
     return (
         <SafeAreaView style={styles.container}>
+            <Image source={require('../../assets/logo.png')} style={{width: 330, height: 120, marginBottom: '10%'}}/>
             <FlatList
                 data={todos}
                 renderItem={(item) => <Item character={item.item} />}

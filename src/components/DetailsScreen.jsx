@@ -13,7 +13,7 @@ function DetailCharacters() {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <View style={{ alignItems: 'center', padding: 20, backgroundColor: '#e3e3e3', borderRadius: 10, margin: 10 }}>
         <Image
-          style={{ width: 100, height: 100, borderRadius: 10 }}
+          style={{ width: 300, height: 300, borderRadius: 10 }}
           source={{ uri: character.image }}
         />
         <Text style={{ marginTop: 10 }}>Nom : {character.name}</Text>
@@ -21,14 +21,10 @@ function DetailCharacters() {
         <Text>Espèce : {character.species}</Text>
         <Text>Localisation : {character.location?.name}</Text>
 
-        {/* Ajoutez un bouton "Like" */}
-        <Button
-          title={liked ? 'Unlike' : 'Like'}
-          onPress={() => setLiked(!liked)}
-        />
       </View>
     </View>
   );
 }
 
 export default DetailCharacters;
+
