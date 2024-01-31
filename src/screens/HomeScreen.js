@@ -38,7 +38,7 @@ const ExampleAPIs = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Image source={require('../../assets/logo.png')} style={{width: 330, height: 120, margin: '3%'}}/>
+            <Image source={require('../../assets/logo.png')} style={{width: 330, height: 120, marginBottom: '10%'}}/>
             <FlatList
                 data={todos}
                 renderItem={(item) => <Item character={item.item} />}
